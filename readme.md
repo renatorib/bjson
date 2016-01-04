@@ -1,19 +1,23 @@
 # bjson
 Bind Json: Reactive way to read/write json files. 
 
-## How works
+```
+npm install bjson --save
+```
+
+## How it works
 When you need to edit a json file, what you do?  
-- Read json file.
-- Deserialize json file.
-- Edit parsed object.
-- Serialize new object.
-- Write back into file.
+1. Read json file.
+2. Deserialize json file.
+3. Edit parsed object.
+4. Serialize new object.
+5. Write back into file.
 
-With bjson, you will do it:
-- Read json file. (Will return parsed object)
-- Edit object. (All changes are reactive. Will write it back into file)
+With bjson:
+1. Read json file. (Will return parsed object)
+2. Edit object. (All changes are reactive. Will write it back into file)
 
-## How to use
+## Getting started
 ### Binding json
 *settings.json*
 ```json
@@ -22,6 +26,7 @@ With bjson, you will do it:
 
 *whatever.js*
 ```js
+var bjson = require('bjson');
 var settings = bjson('settings'); // will read or create settings.json
 settings.prop = 'bar';
 ```
@@ -46,6 +51,7 @@ You can watch changes with a instance of `Object.observe` passed as callback arg
 
 whatever.js
 ```js
+var bjson = require('bjson');
 var settings = bjson('settings', function(observe){
     observe.on('change', function(changes){
         console.log('Path:', changes.path);
@@ -82,6 +88,7 @@ New Value: bar
 ### Observe events
 
 ```js
+var bjson = require('bjson');
 var settings = bjson('settings', function(observe){
     observe.on('add', function(changes){});
     observe.on('update', function(changes){});
@@ -103,6 +110,7 @@ var settings = bjson('settings', function(observe){
 
 Example:
 ```js
+var bjson = require('bjson');
 var settings = bjson('settings', function(observe){
     observe.on('change', function(changes){
         console.log(changes);
