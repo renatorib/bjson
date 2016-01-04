@@ -75,7 +75,7 @@ New Value: bar
 ```json
 {
     "prop": "foo",
-    "otherprop": "bar",
+    "otherprop": "bar"
 }
 ```
 
