@@ -1,0 +1,25 @@
+{
+  "name": "bjson",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renatorib/bjson.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/renatorib/bjson/issues"
+  },
+  "homepage": "https://github.com/renatorib/bjson#readme",
+  "dependencies": {
+    "graceful-fs": "^4.1.2",
+    "mkdirp": "^0.5.1",
+    "observed": "^1.1.1",
+    "steno": "^0.4.2"
+  }
+}
