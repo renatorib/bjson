@@ -1,5 +1,5 @@
 # bjson
-Bind Json: Reactive way to write json files.  
+Bind Json: Reactive way to read/write json files. 
 
 ## How works
 When you need to edit a json file, what you do?  
@@ -14,7 +14,6 @@ With bjson, you will do it:
 - Edit object. (All changes are reactive. Will write it back into file)
 
 ## How to use
-
 ### Binding json
 *settings.json*
 ```json
@@ -69,7 +68,7 @@ New Value: foo
 Path: otherprop
 Old Value: undefined
 New Value: bar
-
+-----
 ```
 
 *settings.json:*
