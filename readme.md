@@ -6,14 +6,14 @@ npm install bjson --save
 ```
 
 ## How it works
-When you need to edit a json file, what you do?  
+**When you need to edit a json file, what you do?**  
 1. Read json file.  
 2. Deserialize json file.  
 3. Edit parsed object.  
 4. Serialize new object.  
 5. Write back into file.  
   
-With bjson:  
+**With bjson:**  
 1. Read json file. (Will return parsed object)  
 2. Edit object. (All changes are reactive. Will write it back into file)  
   
