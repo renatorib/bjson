@@ -1,7 +1,7 @@
 'use strict';
 
 let bjson = require('../index'),
-		file = bjson('my/deep/file');
+let file = bjson('my/deep/file');
 
 file.foo = 'bar';
 file.object = {
