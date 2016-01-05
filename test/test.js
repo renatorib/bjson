@@ -1,6 +1,6 @@
 'use strict';
 
-let bjson = require('../index'),
+let bjson = require('../index');
 let file = bjson('my/deep/file');
 
 file.foo = 'bar';
