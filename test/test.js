@@ -1,3 +1,6 @@
+// TODO:
+// Make some mocha tests
+
 'use strict';
 
 let bjson = require('../index');
