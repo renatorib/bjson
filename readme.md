@@ -1,21 +1,44 @@
-# bjson
+# Bind Json - "bjson"
 Bind Json: Reactive way to read/write json files. 
 
-```
-npm install bjson --save
-```
+> **Note:**  
+> Bind Json, called as "bjson", don't have ANY RELATIONS with [Binary Json](http://bjson.org), also called as "bjson".  
+> These are two different projects with same abbreviation name. Sorry for this.
 
 ## How it works
 **When you need to edit a json file, what you do?**  
-1. Read json file.  
-2. Deserialize json file.  
-3. Edit parsed object.  
-4. Serialize new object.  
-5. Write back into file.  
-  
-**With bjson:**  
-1. Read json file. (Will return parsed object)  
-2. Edit object. (All changes are reactive. Will write it back into file)  
+
+| Without bjson                  | With bjson                                         |
+| ------------------------------ | -------------------------------------------------- |
+| Create json file if not exists |                                                    |
+| Read json file.                | Read json file   _(Will create if not exists)_     |
+| Deserialize json file.         |                                                    |
+| Edit parsed object.            | Edit object  _(Will reactively save in json file)_ |
+| Serialize new object.          |                                                    |
+| Write back into file.          |                                                    |
+
+
+### Examples
+
+**Editing .json file without bjson**
+```js
+var fs = require('fs');
+if(!fs.existsSync('settings.json')){
+  fs.writeFileSync('settings.json', '{}');
+}
+var settingsJson = fs.readFileSync('settings.json');
+var settings = JSON.parse(settingsJson);
+settings.foo = 'bar';
+var settingsJson = JSON.stringify(settings, null, 2);
+fs.writeFileSync('settings.json', settingsJson);
+```
+
+**Editing .json file with bjson**
+```js
+var bjson = require('bjson');
+var settings = bjson('settings.json');
+settings.foo = 'bar'; 
+```
   
 ## Getting started
 ### Binding json
