@@ -1,10 +1,11 @@
-var bjson = require('../index');
+'use strict';
 
-var file = bjson('my/deep/file');
+let bjson = require('../index');
+let file = bjson('my/deep/file');
 
 file.foo = 'bar';
 file.object = {
-    deep: {
-        bar: 'foo'
-    }
+  deep: {
+    bar: 'foo'
+  }
 }
