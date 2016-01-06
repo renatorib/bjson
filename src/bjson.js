@@ -11,14 +11,6 @@ let keepExtension = helpers.keepExtension,
     existsSync = helpers.existsSync,
     tmp = {};
 
-let write = function(file, parsed){
-  // steno is used to prevent race condition
-  steno.writeFile(file, JSON.stringify(parsed, null, '\t'));
-}
-
-let parseJson = (file) => {
-  return JSON.parse(fs.readFileSync(file));
-}
 
 let bjson = (file, cb) => {
   let parsed,
@@ -34,17 +26,17 @@ let bjson = (file, cb) => {
       fs.writeFileSync(file, '{}');
   }
 
-  parsed = parseJson(file);
+  parsed = JSON.parse(fs.readFileSync(file));
   observe = observed(parsed);
 
   observe.on('change', () => {
-    write(file, parsed);
+    steno.writeFile(file, JSON.stringify(parsed, null, '\t'));
   });
 
   if(typeof cb === "function") {
     cb(observe);
   }
-  
+
   return tmp[file] = parsed;
 }
 
