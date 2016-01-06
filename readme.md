@@ -1,9 +1,8 @@
 # bjson
 Bind Json: Reactive way to read/write json files. 
 
-```
-npm install bjson --save
-```
+**Note:**
+Bind Json, also called as "bjson" don't have ANY relations with [Binary Json](http://bjson.org), also called as "bjson" too. It's two different projects with same abbreviation name. Sorry for this.
 
 ## How it works
 **When you need to edit a json file, what you do?**  
