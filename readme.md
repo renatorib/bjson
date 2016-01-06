@@ -28,7 +28,7 @@ if(!fs.existsSync('settings.json')){
 var settingsJson = fs.readFileSync('settings.json');
 var settings = JSON.parse(settingsJson);
 settings.foo = 'bar';
-var settingsJson = JSON.strinfigy(settings, null, 2);
+var settingsJson = JSON.stringify(settings, null, 2);
 fs.writeFileSync('settings.json', settingsJson);
 ```
 
