@@ -30,7 +30,7 @@ let bjson = (file, cb) => {
   observe = observed(parsed);
 
   observe.on('change', () => {
-    steno.writeFile(file, JSON.stringify(parsed, null, '\t'));
+    steno.writeFileSync(file, JSON.stringify(parsed, null, '\t'));
   });
 
   if(typeof cb === "function") {
